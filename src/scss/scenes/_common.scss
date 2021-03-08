@@ -1,0 +1,114 @@
+body {
+    font-family: 'Work Sans';
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    width: initial;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 40px;
+
+    @include media-breakpoint-down('md') {
+        font-size: 28px;
+    }
+
+    @include media-breakpoint-down('sm') {
+        font-size: 18px;
+    }
+}
+
+.main {
+    z-index: 1;
+    position: relative;
+    margin-top: -240px;
+    padding: 300px 0 100px;
+    width: 100%;
+
+    @include media-breakpoint-down('sm') {
+        padding: 260px 0 20px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -25%;
+        width: 150%;
+        background-image: url('../img/background.png');
+        background-size: cover;
+        transform: skewX(150deg);
+        min-height: 300px;
+        border-radius: 50%;
+
+        @include media-breakpoint-down('sm') {
+            transform: skewX(0);
+            border-radius: 20px;
+            width: 100%;
+            top: 80px;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+.header {
+    position: relative;
+    z-index: 2;
+
+    .header-logo {
+        margin-top: 74px;
+
+        @include media-breakpoint-down('sm') {
+            margin: auto;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            width: 264px;
+            height: auto;
+            @include media-breakpoint-down('sm') {
+                height: 100px;
+                width: auto;
+            }
+        }
+    }
+    .header-logo-secondary {
+        margin-top: 140px;
+
+        @include media-breakpoint-down('sm') {
+            margin: auto;
+            margin-top: 12px;
+        }
+        
+        img {
+            max-width: 100%;
+            width: 365px;
+            height: auto;
+
+            @include media-breakpoint-down('sm') {
+                height: 75px;
+                width: auto;
+            }
+        }
+    }
+}
+
+.footer {
+    position: relative;
+    z-index: 1;
+    padding: 30px 0;
+
+    .footer-logo {
+        img {
+            max-width: 100%;
+            width: 393px;
+            height: auto;
+        }
+    }
+}
